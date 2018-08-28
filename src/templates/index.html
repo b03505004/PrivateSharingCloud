@@ -1,0 +1,21 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+<link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='styles/index.css') }}">
+<link rel="icon" typr="image/png" size="32x32" href="{{url_for('static', filename='favicon-32x32.png')}}">
+<html>
+    <head>
+        <title>私有视频共享云</title>
+    </head>
+    <body>
+        <br><br>
+        <h1 style="text-align:center;color: #FADF55;">私有视频共享云</h1>
+        <div style="text-align:center">
+            <ul>
+                <li><a href="http://{{IPPORT}}/record"><img src="{{url_for('static', filename='record.png')}}" width="180" height="180"><br><br>录制视频</a></li>
+                <li><a href="http://{{IPPORT}}/upload"><img src="{{url_for('static', filename='upload.png')}}" width="180" height="180"><br><br>上传视频</a></li>
+                <li><a href="http://{{IPPORT}}/play"><img src="{{url_for('static', filename='play.png')}}" width="180" height="180"><br><br>视频浏览</a></li>
+            </ul>
+        </div>
+    </body>
+</html>

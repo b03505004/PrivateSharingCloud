@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+<link rel="stylesheet" href="{{ url_for("static",filename="styles/index.css")}}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for("static",filename="favicon-32x32.css") }}">
+<html>
+<head>
+<title>准备录制</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<body bgcolor="#CC3B23" style="font-size:40px; text-align:center;color: #FADF55;">
+<br><br>
+准备录制
+<br><br>亲，您的视频录制号码: {{ID}} <br><br>
+<form action="http://{{IPPORT}}"> 
+<input type="submit" value="返回主页">
+</form>
+</body>
+</html>

@@ -1,0 +1,72 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+body {background-color: #CC3B23;}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block
+}
+h1 { color: #ffffff; font-family: 'Noto Sans TC', sans-serif; font-size: 54px; font-weight: 300; line-height: 58px; margin: 0 0 58px; }
+
+h2 { color: #ffffff; font-family:  'Noto Sans TC', sans-serif; font-size: 30px; font-weight: 300; line-height: 58px; margin: 0 0 58px; }
+
+p { color: #adb7bd; font-family: 'Noto Sans TC', sans-serif; font-size: 16px; line-height: 26px; text-indent: 30px; margin: 0; }
+
+.codes{
+    font-size: 17px
+}
+
+a { color: #fe921f; text-decoration: none; }
+
+a:visited{color: #afafaf}
+
+a:hover { color: #ffffff }
+
+
+.date { background: #fe921f; color: #ffffff; display: inline-block; font-family: 'Lato', sans-serif; font-size: 12px; font-weight: bold; line-height: 12px; letter-spacing: 1px; margin: 0 0 30px; padding: 10px 15px 8px; text-transform: uppercase; }
+
+ul {
+    list-style-type: none;
+    display: inline-block;
+    margin:0;
+    padding:10;
+    overflow: hidden;
+    background-color: #CC3B27;
+}
+
+li{
+    text-align: center;
+    float:left;
+}
+
+li a {
+    display: block;
+    color: #FADF55;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Noto Sans TC', sans-serif;
+    padding: 30px;
+    text-decoration: none;
+}
+li a:visited {
+    display: block;
+    color: #FADF55;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Noto Sans TC', sans-serif;
+    padding: 30px;
+    text-decoration: none;
+}
+li a:hover {
+    display: block;
+    color: #FADF60;
+    background-color: #CC3B00;
+    text-align: center;
+    padding: 30px;
+    text-decoration: none;
+    font-size: 33px;
+}
+
+li a:hover img {
+    width: 200;
+    height: 200;
+}

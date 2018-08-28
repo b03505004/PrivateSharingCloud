@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='favicon-32x32.png')}}">
+
+<html>
+    <head>
+        <title>上传视频</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <br><br>
+        <h1 style="text-align:center;color: #FADF55;">上传视频</h1>
+        <div style="text-align:center">
+            <form id="upload-form" action="{{ url_for('uploader') }}" method="POST" enctype="multipart/form-data">
+                
+                <input id="file-picker" type="file" name="file" accept="video/*" style="font-size:18px; color: #FADF55;" padding-left: 40px;> 
+                <br>
+                <br>
+                <output id="list" style="font-size:20px; text-align:center;color: #FADF55;"></output>
+                <br>
+                <br>
+                <div id="msg" style="font-size:20px; text-align:center;color: #FADF55;"></div>
+                <br>
+                <br>
+                <p id="msg" style="font-size:20px; text-align:center;color: #FADF55;">存活时间</dipv>
+                <select name='TTL' id="ttl">
+                    <option value='1'>1分钟</option>
+                    <option value='10'>10分钟</option>
+                    <option value='30'>30分钟</option>
+                    <option value='60'>1小时</option>
+                    <option value='720'>12小时</option>
+                    <option value='-1'>无限期</option>
+                </select>
+                <br>
+                <br>
+                <input type="submit" value="上传" id="upload-button">
+                <br>
+                <br>
+
+            </form>
+            <form action="http://{{IPPORT}}/"> 
+                <input type="submit" value="返回主页">
+            </form>
+        </div>
+        
+    </body>
+    
+    <script>
+            function handleFileSelect(evt) {
+            var files = evt.target.files; 
+            var output = [];
+            for (var i = 0, f; f = files[i]; i++) {
+                output.push('<li> (', f.type || 'n/a', ') - ',
+                            f.size, ' 位元组, 最后修改日期: ',
+                            f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+                            '</li>');
+            }
+            document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+            }
+            document.getElementById('file-picker').addEventListener('change', handleFileSelect, false);
+    </script>
+    <script>
+        $("#file-picker").change(function(){
+            var input = document.getElementById('file-picker');
+            for (var i=0; i<input.files.length; i++){
+                var ext= input.files[i].name.substring(input.files[i].name.lastIndexOf('.')+1).toLowerCase()
+                if (((ext == 'MOV') ||(ext == 'mp4') || (ext == 'avi') || (ext == 'mpeg') || (ext == 'axi') || (ext == 'rmvb') || (ext == 'wmv') || (ext == 'flv'))){
+                    $("#msg").text("档案类型支援!")
+                }
+                else{
+                    $("#msg").text("档案类型不支援!!!")
+                    document.getElementById("file-picker").value ="";
+                }
+            }
+        });
+    </script>
+</html>
